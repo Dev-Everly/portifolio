@@ -373,6 +373,135 @@ header a:hover{
     color: var(--gray-400);
 }
 
+/* Seção Vamos nos Conhecer */
+.guess-container {
+    text-align: center;
+}
+
+.guess-subtitle {
+    margin-bottom: var(--spacing-xl);
+    font-size: var(--text-lg);
+    color: var(--text-muted);
+}
+
+.guess-card {
+    max-width: 40rem;
+    margin: 0 auto var(--spacing-2xl);
+    padding: var(--spacing-lg);
+    border: 0.1rem solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    background-color: var(--bg-card);
+    box-shadow: var(--shadow-sm);
+}
+
+.guess-question {
+    margin-bottom: var(--spacing-md);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--text-heading);
+}
+
+.guess-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.guess-option {
+    padding: 0.65rem 1.5rem;
+    border: 0.15rem solid var(--purple-500);
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--text-body);
+    font-family: inherit;
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-default);
+}
+
+.guess-option:hover {
+    background-color: var(--purple-500);
+    color: var(--white);
+    transform: translateY(-0.15rem);
+}
+
+.guess-option.correct {
+    border-color: #2f9e44;
+    background-color: #2f9e44;
+    color: var(--white);
+}
+
+.guess-option.wrong {
+    animation: shake 0.4s ease;
+    border-color: var(--error);
+}
+
+.guess-option:disabled {
+    cursor: default;
+    opacity: 0.6;
+    transform: none;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-0.4rem); }
+    75% { transform: translateX(0.4rem); }
+}
+
+.guess-reveal {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    animation: reveal-in 0.5s ease;
+}
+
+.guess-card.revealed .guess-reveal {
+    display: flex;
+}
+
+.guess-card.revealed .guess-options {
+    display: none;
+}
+
+.guess-card.revealed .guess-question {
+    color: #2f9e44;
+}
+
+.guess-reveal img {
+    width: 100%;
+    max-width: 16rem;
+    border-radius: var(--radius-lg);
+    border: 0.2rem solid var(--purple-500);
+    box-shadow: var(--shadow-md);
+}
+
+.guess-reveal p {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-body);
+}
+
+@keyframes reveal-in {
+    from { opacity: 0; transform: scale(0.9) translateY(1rem); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.guess-final {
+    margin-top: var(--spacing-lg);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--text-heading);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.guess-final.show {
+    opacity: 1;
+}
 
 /* Projects */
 .projects-container {
@@ -827,7 +956,35 @@ footer {
    RESPONSIVIDADE - TABLETS (até 1024px)
 ======================================== */
 
+
 @media screen and (max-width: 1024px) {
+    /* Vamos nos conhecer */
+    .guess-container {
+        margin: var(--spacing-lg) auto 0;
+    }
+
+    .guess-subtitle {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .guess-card {
+        max-width: 100%;
+        margin: 0 auto var(--spacing-lg);
+        padding: var(--spacing-md);
+    }
+
+    .guess-options {
+        gap: var(--spacing-xs);
+    }
+
+    .guess-option {
+        padding: 0.6rem 1.25rem;
+        font-size: var(--text-base);
+    }
+
+    .guess-reveal img {
+        max-width: 13rem;
+    }
    
     /* Layout */
     .section-container {
@@ -1025,6 +1182,36 @@ footer {
 ======================================== */
 
 @media screen and (max-width: 480px) {
+    /* Vamos nos conhecer */
+    .guess-card {
+        padding: var(--spacing-sm);
+    }
+
+    .guess-question {
+        font-size: var(--text-base);
+    }
+
+    .guess-options {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .guess-option {
+        width: 100%;
+        padding: 0.75rem;
+    }
+
+    .guess-reveal img {
+        max-width: 10rem;
+    }
+
+    .guess-reveal p {
+        font-size: var(--text-base);
+    }
+
+    .guess-final {
+        font-size: var(--text-lg);
+    }
 
     /* Layout */
     .section-container {
