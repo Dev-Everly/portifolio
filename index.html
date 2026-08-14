@@ -33,23 +33,45 @@
 <body>
 
 
+   <body>
+
+    <div class="bg-blobs" aria-hidden="true">
+        <span class="blob blob-purple"></span>
+        <span class="blob blob-blue"></span>
+    </div>
+
     <!--Cabeçalho da Página-->
     <header>
         <div class="menu-content">
-
-            <!-- Título do cabeaçho -->
             <a href="index.html" id="titulo">Portifólio</a>
 
-            <!-- Menu Navegação -->
-            <nav>
-                <ul class="menu-list">
-                    <li><a href="#hero">Início</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#projects">Projetos</a></li>
-                    <li><a href="#contacts">Contatos</a></li>
-                </ul>
+            <div class="nav-actions">
+                <nav>
+                    <ul class="menu-list">
+                        <li><a href="index.html#hero">Início</a></li>
+                        <li><a href="index.html#about">Sobre</a></li>
+                        <li><a href="index.html#projects">Projetos</a></li>
+                        <li><a href="index.html#contact">Contatos</a></li>
+                    </ul>
+                </nav>
 
-            </nav>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema" title="Alternar tema claro/escuro">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -63,7 +85,8 @@
             <article class="hero-content">
                 <span>👋 Olá, eu sou a Everly</span>
                 <h1>Desenvolvedora Java Full Stack</h1>
-                <p>Desenvolvo aplicações web utilizando Java, Spring Boot, React e bancos de dados relacionais, com foco em código limpo, APIs REST e boas práticas de desenvolvimento.</p>
+                <p>Desenvolvo aplicações web utilizando Java, Spring Boot, React e bancos de dados relacionais, com foco
+                    em código limpo, APIs REST e boas práticas de desenvolvimento.</p>
 
                 <div class="buttons-container">
                     <a href="#contact" class="botao">Entre em contato</a>
@@ -96,7 +119,7 @@
 
                 <div class="swiper-wrapper">
 
-                   
+
                 </div>
 
                 <!-- Botões de Navegação -->
@@ -140,9 +163,7 @@
             </article>
 
             <!-- Formulário de Contato -->
-            <form id="formulario" 
-            action="https://formsubmit.co/e41bcc2acee0852aee0ccb6f0b428a37" 
-            method = "POST">
+            <form id="formulario" action="https://formsubmit.co/e41bcc2acee0852aee0ccb6f0b428a37" method="POST">
 
                 <input type="hidden" name="_next" value="http://localhost:5500/success.html">
                 <input type="hidden" name="_captcha" value="false">
@@ -178,9 +199,15 @@
     <!-- SWIPER JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Script Principal da página -->
+    <script src="./assets/js/theme.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
+</html>
+</body>
+<div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob-purple"></span>
+    <span class="blob blob-blue"></span>
+</div>
 
 </html>
