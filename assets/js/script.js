@@ -1,3 +1,11 @@
+
+ 
+
+// Retorna a cor certa para a tecnologia, ou uma cor padrão se não encontrar
+function getCorTag(nome) {
+    const chave = nome.toLowerCase().trim()
+    return coresTecnologia[chave] || '#8b5cf6'
+}
 // Selecionar a Seção about
 const about = document.querySelector("#about")
 
@@ -75,7 +83,7 @@ async function getAboutGithub() {
 async function getProjectsGitHub() {
     try {
 
-        const resposta = await fetch('https://api.github.com/users/quelbarch/repos?sort=update&per_page=6')
+       const resposta = await fetch('https://api.github.com/users/Dev-Everly/repos?sort=update&per_page=6')
 
         const repositorios = await resposta.json()
 
